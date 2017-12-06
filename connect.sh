@@ -23,6 +23,6 @@ echo 'plotOptions: {line: {dataLabels: {enabled: false},enableMouseTracking: tru
 echo '})'
 echo '</script>'
 echo '<div class="text" style="font-size:9pt;Text-align:right">The copy right of Chart javascript belongs to Highcharts</div>'
-echo '</body>'
+echo '</body>' 
 
 
