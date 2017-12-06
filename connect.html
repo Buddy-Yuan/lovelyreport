@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Highcharts Example</title>
+<style type="text/css">
+</style>
+</head>
+</html>
+<body>
+<script src="code/highcharts.js"></script>
+<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+<script type="text/javascript">
+Highcharts.chart('container', {
+chart: {type: 'line'},
+title: {text: 'Listener Connections Per Min'},
+subtitle: {text: 'Author : Buddy Yuan'},
+xAxis: {categories: ['11:00','11:01','11:02','11:03','11:04','11:05','11:06','11:07','11:08','11:09','11:10','11:11','11:12','11:13','11:14','11:15','11:16','11:17','11:18','11:19','11:20','11:21','11:22','11:23','11:24','11:25','11:26','11:27','11:28','11:29','11:30','11:31','11:32','11:33','11:34','11:35','11:36','11:37','11:38','11:39','11:40','11:41','11:42','11:43','11:44','11:45','11:46','11:47','11:48','11:49','11:50','11:51','11:52','11:53','11:54','11:55','11:56','11:57','11:58','11:59']},
+series: [{name: 'Listener Connections Per Min',data: [1758,1808,1789,1818,1866,1836,1814,1775,1800,1752,1836,1887,1780,1712,1824,1782,1795,1810,1796,1828,1844,1757,1814,1807,1882,1753,1880,1801,1812,1874,1866,1828,1811,1779,1907,1840,1853,1809,1783,1871,1860,1838,1796,1804,1950,1774,1829,1810,1804,1891,1917,1840,1792,1822,1951,1867,1841,1860,1819,1934]}],
+yAxis: {title: {text: 'Listener Connections'}},
+plotOptions: {line: {dataLabels: {enabled: false},enableMouseTracking: true}}
+})
+</script>
+<div class="text" style="font-size:9pt;Text-align:right">The copy right of Chart javascript belongs to Highcharts</div>
+</body>
