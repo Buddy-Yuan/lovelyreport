@@ -1,0 +1,28 @@
+#!/bin/sh
+echo '<html>'
+echo '<head>'
+echo '<meta http-equiv="Content-Type" content="text/html; charset=utf-8">'
+echo '<title>Highcharts Example</title>'
+echo '<style type="text/css">'
+echo '</style>'
+echo '</head>'
+echo '</html>'
+echo '<body>'
+echo '<script src="code/highcharts.js"></script>'
+echo '<div id="container" style="min-width: 310px; height: 400px; margin: 0 auto"></div>'
+echo '<script type="text/javascript">'
+echo 'Highcharts.chart('\''container'\'', {'
+echo 'chart: {type: '\''line'\''},'
+echo 'title: {text: '\''Listener Connections Per Min'\''},'
+echo 'subtitle: {text: '\''Author : Buddy Yuan'\''},'
+echo 'xAxis: {categories: ['`fgrep "$1:" $2  |fgrep "establish" |awk '{print $2 " " $1}' |awk -F: '{print "'\''" $1 ":" $2 "'\''"}' |sort |uniq -c |awk '{a=a==c?a$1:a","$1;b=b==c?b$2:b","$2}END{print a"\n"b}' |sed -n '$p'`']},'
+echo 'series: [{name: '\''Listener Connections Per Min'\'',data: ['`fgrep "$1:" $2  |fgrep "establish" |awk '{print $2 " " $1}' |awk -F: '{print $1 ":" $2 }' |sort |
+uniq -c |awk '{a=a==c?a$1:a","$1;b=b==c?b$2:b","$2}END{print a"\n"b}' |sed -n '1p' `']}],'
+echo 'yAxis: {title: {text: '\''Listener Connections'\''}},'
+echo 'plotOptions: {line: {dataLabels: {enabled: false},enableMouseTracking: true}}'
+echo '})'
+echo '</script>'
+echo '<div class="text" style="font-size:9pt;Text-align:right">The copy right of Chart javascript belongs to Highcharts</div>'
+echo '</body>'
+
+
